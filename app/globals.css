@@ -956,3 +956,224 @@ body {
 .select-sm:focus {
   border-color: var(--color-on-tertiary-container);
 }
+
+/* ── Houses page ─────────────────────────────────────────────────────────── */
+
+@layer components {
+
+  /* Filters bar */
+  .filters-bar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--spacing-md);
+    background-color: var(--color-surface-container-low);
+    padding: var(--spacing-md);
+    border-radius: var(--radius-xl);
+    border: 1px solid var(--color-outline-variant);
+  }
+
+  .filter-chip {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    padding: 6px var(--spacing-sm);
+    background-color: var(--color-surface-container-lowest);
+    border: 1px solid var(--color-outline-variant);
+    border-radius: var(--radius-md);
+  }
+
+  .filter-chip-label {
+    font-size: var(--font-size-label-md);
+    font-weight: var(--font-weight-semibold);
+    letter-spacing: var(--tracking-wide-5);
+    text-transform: uppercase;
+    color: var(--color-on-surface-variant);
+    white-space: nowrap;
+  }
+
+  .filter-select {
+    appearance: none;
+    -webkit-appearance: none;
+    background: transparent;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    font-size: var(--font-size-body-sm);
+    font-weight: var(--font-weight-medium);
+    color: var(--color-on-surface);
+    cursor: pointer;
+    padding: 0;
+    padding-right: 1.25rem; /* room for native arrow */
+  }
+
+  .filter-clear-btn {
+    margin-left: auto;
+    appearance: none;
+    background: transparent;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    font-size: var(--font-size-body-sm);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-on-tertiary-container);
+    cursor: pointer;
+    padding: 0;
+    transition: opacity 150ms ease;
+  }
+
+  .filter-clear-btn:hover {
+    text-decoration: underline;
+    opacity: 0.8;
+  }
+
+  /* House unit cell */
+  .house-unit-cell {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .house-unit-icon {
+    width: 40px;
+    height: 40px;
+    background-color: var(--color-surface-container);
+    border-radius: var(--radius-lg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-on-surface-variant);
+    flex-shrink: 0;
+  }
+
+  /* Owner avatar — small colored initials bubble */
+  .owner-avatar {
+    width: 28px;
+    height: 28px;
+    border-radius: var(--radius-full);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    font-weight: var(--font-weight-bold);
+    flex-shrink: 0;
+  }
+
+  .owner-avatar--blue   { background-color: #dbeafe; color: #1d4ed8; }
+  .owner-avatar--purple { background-color: #f3e8ff; color: #7e22ce; }
+  .owner-avatar--orange { background-color: #ffedd5; color: #c2410c; }
+  .owner-avatar--teal   { background-color: #ccfbf1; color: #0f766e; }
+
+  /* Status dot inside badge */
+  .status-dot {
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    border-radius: var(--radius-full);
+    flex-shrink: 0;
+  }
+
+  .status-dot--paid    { background-color: var(--color-status-paid); }
+  .status-dot--pending { background-color: var(--color-status-pending); }
+  .status-dot--overdue { background-color: var(--color-status-overdue); }
+
+  /* Houses badge (with dot inside) */
+  .houses-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+  }
+
+  /* Houses row — reveal actions on hover */
+  .houses-row {
+    transition: background-color 150ms ease;
+  }
+
+  .houses-actions-cell {
+    text-align: center;
+  }
+
+  .houses-actions {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    opacity: 0;
+    transition: opacity 150ms ease;
+  }
+
+  .houses-row:hover .houses-actions {
+    opacity: 1;
+  }
+
+  /* Pagination */
+  .table-pagination {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--spacing-md) var(--spacing-lg);
+    border-top: 1px solid var(--color-surface-container);
+    background-color: var(--color-surface-container-low);
+  }
+
+  .pagination-controls {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+  }
+
+  .pagination-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 32px;
+    height: 32px;
+    padding: 0 var(--spacing-sm);
+    font-size: var(--font-size-label-md);
+    font-weight: var(--font-weight-semibold);
+    border-radius: var(--radius);
+    border: 1px solid var(--color-outline-variant);
+    background-color: var(--color-surface-container-lowest);
+    color: var(--color-on-surface-variant);
+    cursor: pointer;
+    transition: background-color 150ms ease, color 150ms ease;
+    line-height: 1;
+  }
+
+  .pagination-btn:hover:not(:disabled):not(.pagination-btn--active) {
+    background-color: var(--color-surface-container-low);
+    color: var(--color-on-surface);
+  }
+
+  .pagination-btn:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+  }
+
+  .pagination-btn--active {
+    background-color: var(--color-on-tertiary-container);
+    color: #ffffff;
+    border-color: var(--color-on-tertiary-container);
+  }
+
+  .pagination-ellipsis {
+    font-size: var(--font-size-label-md);
+    color: var(--color-outline);
+    padding: 0 2px;
+    user-select: none;
+  }
+
+  /* Custom scrollbar for the table */
+  .table-wrap::-webkit-scrollbar {
+    height: 6px;
+  }
+
+  .table-wrap::-webkit-scrollbar-track {
+    background: var(--color-surface-container-low);
+  }
+
+  .table-wrap::-webkit-scrollbar-thumb {
+    background: var(--color-outline-variant);
+    border-radius: var(--radius-full);
+  }
+
+}
