@@ -1162,6 +1162,78 @@ body {
     user-select: none;
   }
 
+  /* ── Payments page ─────────────────────────────────────────────────────── */
+
+  /* KPI grid with 2 columns */
+  .kpi-grid--2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: 900px) {
+    .kpi-grid--2 {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  /* Amber KPI icon (for pending/warning widgets) */
+  .kpi-icon--amber {
+    background-color: #fef3c7;
+    color: #d97706;
+  }
+
+  /* Extra avatar color */
+  .owner-avatar--rose { background-color: #ffe4e6; color: #e11d48; }
+
+  /* Payment reference cell */
+  .payments-ref-cell {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  /* Payment row */
+  .payments-row {
+    transition: background-color 150ms ease;
+  }
+
+  /* Method pill */
+  .payments-method-cell {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    justify-content: center;
+  }
+
+  .payments-method-icon {
+    font-size: 17px;
+    color: var(--color-on-surface-variant);
+  }
+
+  /* Date input inside filter chip — inherit font */
+  .filter-date-input {
+    font-family: var(--font-sans);
+    font-size: var(--font-size-body-sm);
+    color: var(--color-on-surface);
+    background: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    min-width: 0;
+  }
+
+  /* Empty state */
+  .payments-empty-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-sm);
+  }
+
+  .payments-empty-icon {
+    font-size: 40px;
+    color: var(--color-outline-variant);
+  }
+
   /* Custom scrollbar for the table */
   .table-wrap::-webkit-scrollbar {
     height: 6px;
