@@ -7,6 +7,7 @@ const navLinks = [
   { href: "/dashboard", icon: "dashboard", label: "Panel de administración" },
   { href: "/houses", icon: "home_work", label: "Casas" },
   { href: "/payments", icon: "payments", label: "Pagos" },
+  { href: "/expenses", icon: "receipt", label: "Egresos" },
   { href: "/settings", icon: "settings", label: "Ajustes" },
 ];
 
