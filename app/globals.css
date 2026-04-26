@@ -1249,3 +1249,312 @@ body {
   }
 
 }
+
+/* ── House Details page ──────────────────────────────────────────────────────── */
+
+/* Breadcrumb */
+.hd-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.hd-breadcrumb-back {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-lg);
+  background-color: var(--color-surface-container-low);
+  border: 1px solid var(--color-outline-variant);
+  color: var(--color-on-surface-variant);
+  text-decoration: none;
+  transition: background-color 150ms ease, color 150ms ease;
+  flex-shrink: 0;
+}
+
+.hd-breadcrumb-back:hover {
+  background-color: var(--color-surface-container);
+  color: var(--color-on-surface);
+}
+
+.hd-breadcrumb-link {
+  font-size: var(--font-size-body-sm);
+  color: var(--color-on-tertiary-container);
+  text-decoration: none;
+  transition: opacity 150ms ease;
+}
+
+.hd-breadcrumb-link:hover {
+  text-decoration: underline;
+  opacity: 0.8;
+}
+
+/* Bento 12-col grid */
+.hd-bento-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: var(--spacing-lg);
+}
+
+@media (max-width: 1024px) {
+  .hd-bento-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Main unit card — spans 8 cols */
+.hd-unit-card {
+  grid-column: span 8;
+  background-color: var(--color-surface-container-lowest);
+  border: 1px solid var(--color-outline-variant);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-card);
+  overflow: hidden;
+}
+
+@media (max-width: 1024px) {
+  .hd-unit-card {
+    grid-column: span 1;
+  }
+}
+
+/* Hero image area */
+.hd-hero {
+  position: relative;
+  height: 260px;
+  width: 100%;
+  overflow: hidden;
+}
+
+.hd-hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.hd-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.65) 0%, transparent 55%);
+}
+
+.hd-hero-meta {
+  position: absolute;
+  bottom: var(--spacing-lg);
+  left: var(--spacing-lg);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.hd-status-badge {
+  display: inline-block;
+  padding: 3px 10px;
+  background-color: rgba(16, 185, 129, 0.88);
+  color: #fff;
+  font-size: var(--font-size-label-sm);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border-radius: var(--radius-full);
+}
+
+.hd-hero-address {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: var(--font-size-body-sm);
+  color: rgba(255,255,255,0.82);
+}
+
+/* Quick stats bar */
+.hd-stats-bar {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  padding: var(--spacing-lg);
+  border-bottom: 1px solid var(--color-surface-container);
+  text-align: center;
+}
+
+@media (max-width: 640px) {
+  .hd-stats-bar {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-md);
+  }
+}
+
+.hd-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.hd-stat--bordered {
+  border-left: 1px solid var(--color-surface-container-high);
+}
+
+.hd-stat-label {
+  font-size: var(--font-size-label-md);
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: var(--tracking-wide-5);
+  text-transform: uppercase;
+  color: var(--color-on-surface-variant);
+}
+
+.hd-stat-value {
+  font-size: var(--font-size-headline-md);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-on-surface);
+}
+
+/* Notes section */
+.hd-notes {
+  padding: var(--spacing-lg);
+}
+
+/* Side column — spans 4 cols */
+.hd-side-col {
+  grid-column: span 4;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+}
+
+@media (max-width: 1024px) {
+  .hd-side-col {
+    grid-column: span 1;
+  }
+}
+
+/* Finance card */
+.hd-finance-card {
+  padding: var(--spacing-lg);
+}
+
+.hd-finance-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: var(--spacing-lg);
+}
+
+.hd-finance-amount {
+  display: block;
+  font-size: 2rem;
+  font-weight: 900;
+  color: var(--color-on-surface);
+  line-height: 1.1;
+  margin-top: 4px;
+}
+
+.hd-finance-icon-wrap {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-full);
+  background-color: #fee2e2;
+  color: #dc2626;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.hd-finance-lines {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.hd-finance-line {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--spacing-sm) 0;
+  border-bottom: 1px solid var(--color-surface-container-low);
+}
+
+.hd-finance-line--last {
+  border-bottom: none;
+}
+
+.hd-finance-line-amount {
+  font-size: var(--font-size-body-sm);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-on-surface);
+}
+
+.hd-debt-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-sm);
+  width: 100%;
+  margin-top: var(--spacing-md);
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-radius: var(--radius-lg);
+  background-color: #dbeafe;
+  color: #1d4ed8;
+  font-size: var(--font-size-body-sm);
+  font-weight: var(--font-weight-bold);
+  border: none;
+  cursor: pointer;
+  transition: background-color 150ms ease;
+}
+
+.hd-debt-btn:hover {
+  background-color: #bfdbfe;
+}
+
+/* Owner card */
+.hd-owner-card {
+  padding: var(--spacing-lg);
+}
+
+.hd-owner-header {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-md);
+}
+
+.hd-owner-avatar {
+  width: 52px;
+  height: 52px;
+  border-radius: var(--radius-full);
+  object-fit: cover;
+  flex-shrink: 0;
+  border: 2px solid var(--color-outline-variant);
+}
+
+.hd-owner-contacts {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.hd-owner-contact-row {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.hd-contact-icon {
+  font-size: 18px;
+  color: var(--color-outline);
+  flex-shrink: 0;
+}
+
+/* Full-width table card — spans 12 cols */
+.hd-table-card {
+  grid-column: span 12;
+}
+
+@media (max-width: 1024px) {
+  .hd-table-card {
+    grid-column: span 1;
+  }
+}
